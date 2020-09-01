@@ -1,1 +1,2 @@
 recursive-include rackio_admin/static *
+recursive-include rackio_admin/templates *
