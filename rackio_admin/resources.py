@@ -29,7 +29,7 @@ class AdminStaticResource:
                 resp.body = f.read()
 
 
-class AdminViewResouce:
+class AdminViewResource:
 
     def on_get(self, request, response):
         """
@@ -45,6 +45,28 @@ class AdminViewResouce:
 
         path = os.path.join(directory, "templates")
         path = os.path.join(path, "index.html")
+
+        with open(path, 'r') as f:
+            response.body = f.read()
+
+
+class TemplateViewResource:
+
+    def on_get(self, request, response, template_name):
+        """
+
+        :param request:
+        :param response:
+        :return:
+        """
+        response.status = status_code.HTTP_200
+        response.content_type = 'text/html'
+
+        directory = get_package_directory()
+
+        path = os.path.join(directory, "templates")
+        path = os.path.join(path, "views")
+        path = os.path.join(path, "{}.html".format(template_name))
 
         with open(path, 'r') as f:
             response.body = f.read()
