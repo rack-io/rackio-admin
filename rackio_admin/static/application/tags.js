@@ -15,12 +15,19 @@ var tags_app = new Tulipan({
     methods: {
 
         after: function(){
-            
+            this.retrieveTags();
         },
 
         retrieveTags: function(){
 
-            
+            this.$http.get("/api/tags").then(function(res){
+                // exito
+                console.log(res);
+                this.tags = res.data;
+            }, function(err){
+                // falla
+                console.log(err);
+            });
         },
 
         writeTag: function(){
@@ -38,3 +45,5 @@ var tags_app = new Tulipan({
 
     }
 })
+
+setInterval(function(){ tags_app.retrieveTags(); }, 500);
