@@ -1,15 +1,15 @@
 // events.js
 
-var alarms_app = new Tulipan({
+var events_app = new Tulipan({
     template: {
-        url: "/admin/templates/alarms",
+        url: "/admin/templates/events",
         async: false
     },
 
-    route: "/alarms",
+    route: "/events",
 
     data: {
-        alarms: []
+        events: []
     },
 
     methods: {
@@ -18,7 +18,7 @@ var alarms_app = new Tulipan({
             
         },
 
-        retrieveAlarms: function(){
+        retrieveEvents: function(){
             
         }
     }
