@@ -36,7 +36,7 @@ class AdminCore(Singleton):
         self.app.add_route("/admin", _view)
 
         _template_view = TemplateViewResource()
-        self.app.add_route("/admin/templates/{template_name}", _view)
+        self.app.add_route("/admin/templates/{template_name}", _template_view)
 
     def __call__(self, app):
 

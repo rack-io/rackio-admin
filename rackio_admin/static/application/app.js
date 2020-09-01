@@ -4,14 +4,15 @@ var app = new Tulipan({
     
     el: "#main",
 
-    route: "/",
-
     data: {
+    },
+
+    ready: function(){
+        this.$router.navigate("/dashboard");
     },
 
     methods: {
 
-        after: function(){
-        }
+        
     }
 })

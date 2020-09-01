@@ -2,8 +2,9 @@
 
 
 var dashboard_app = new Tulipan({
+    
     template: {
-        url: "/admin/templates/tags",
+        url: "/admin/templates/dashboard",
         async: false
     },
 
