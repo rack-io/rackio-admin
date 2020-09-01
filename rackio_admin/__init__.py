@@ -1,4 +1,4 @@
-# rackio_swagger/__init__.py
+# rackio_admin/__init__.py
 
 from .core import AdminCore
 
