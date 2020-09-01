@@ -16,9 +16,6 @@ setuptools.setup(
     license="MIT",
     url="https://github.com/rack-io/rackio-admin",
     include_package_data=True,
-    package_data = {
-        'static': ['*'],
-    },
     packages=setuptools.find_packages(),
     install_requires=[],
     classifiers=[
