@@ -2,4 +2,4 @@
 
 from .core import AdminCore
 
-AdminSwagger = AdminCore()
+RackioAdmin = AdminCore()
