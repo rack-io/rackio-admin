@@ -5,7 +5,7 @@ This module implements the core app class and methods for Rackio Admin UI.
 """
 
 from ._singleton import Singleton
-from .resources import AdminStaticResource
+from .resources import AdminStaticResource, AdminViewResouce
 from .tools import resource_paths
 
 
@@ -29,6 +29,10 @@ class AdminCore(Singleton):
             route = "/admin" + path + "/{filename}"
 
             self.app.add_route(route, _static)
+
+        _view = AdminViewResouce()
+
+        self.app.add_route("/admin", _view)
 
     def __call__(self, app):
 

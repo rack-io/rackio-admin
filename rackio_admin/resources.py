@@ -1,10 +1,11 @@
 # rackio_admin/views.py
 
+import os
 import mimetypes
 
 from rackio import status_code
 
-from .tools import uri_to_path, get_static_path, get_content_type
+from .tools import uri_to_path, get_static_path, get_content_type, get_package_directory
 
 
 class AdminStaticResource:
@@ -27,6 +28,7 @@ class AdminStaticResource:
             with open(path, 'r', encoding='utf8', errors='ignore') as f:
                 resp.body = f.read()
 
+
 class AdminViewResouce:
 
     def on_get(self, request, response):
@@ -39,7 +41,10 @@ class AdminViewResouce:
         response.status = status_code.HTTP_200
         response.content_type = 'text/html'
 
-        path = 'templates/index.html'
+        directory = get_package_directory()
+
+        path = os.path.join(directory, "templates")
+        path = os.path.join(path, "index.html")
 
         with open(path, 'r') as f:
             response.body = f.read()
