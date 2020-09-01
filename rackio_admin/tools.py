@@ -59,10 +59,11 @@ def resource_paths():
     result =list()
 
     paths = traverse_static()
+    directory = get_package_directory()
 
     for path in paths:
-
-        record = path.replace(os.sep, "/")
+        record = path.replace(directory, "")
+        record = record.replace(os.sep, "/")
 
         result.append(record)
 

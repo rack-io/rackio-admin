@@ -26,7 +26,7 @@ class AdminCore(Singleton):
 
         for path in paths:
 
-            route = "/admin/" + path + "/{filename}"
+            route = "/admin" + path + "/{filename}"
 
             self.app.add_route(route, _static)
 
